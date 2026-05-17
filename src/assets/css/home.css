@@ -1,0 +1,49 @@
+
+/* socials column */
+.socials {
+  align-items: center;
+  padding: 0 3.5em;
+}
+.socials svg {
+  width: 2em;
+  height: auto;
+}
+.vertical-div {
+  width: 2px;
+  height: 8em;
+  background-color: var(--dark);
+}
+
+/* banner */
+.banner {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 5em;
+  padding: 4em 3.5em;
+}
+.banner-content {
+  display: flex;
+  position: relative;
+  height: fit-content;
+}
+.banner-txt {
+  max-width: 50%;
+}
+.banner-content h1{
+  text-wrap: wrap;
+  line-height: 1.1em;
+  font-size: 4em;
+}
+.banner-content .highlight {
+  color: var(--trueorange);
+}
+.banner-content img {
+  z-index: -1;
+  position: absolute;
+  width: 40em;
+  height: auto;
+  top: -8em;
+  right: 0;
+}
