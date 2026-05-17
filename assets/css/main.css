@@ -1,6 +1,6 @@
 
-/* color variables */
 :root {
+  /* color variables */
   --steel: #66727C;
   --lightblue: #90ADBB;
   --cuteorange: #F37D01;
@@ -62,19 +62,37 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.6em 3.5em;
+  padding: 0.8em 3.5em;
   gap: 4em;
 }
 .header-logo {
   width: 130px;
 }
-.navbar {
+.navbar-links {
   width: 100%;
   display: flex;
   justify-content: start;
   align-items: center;
   padding: 20px;
 }
+.navbar-hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+/* navbar: responsive */
+@media (max-width: 1024px) {
+  .navbar-links, .navbar-actions {
+    display: none;
+  }
+  .navbar-hamburger-btn {
+    display: flex;
+  }
+}
+
 
 /* FOOTER */
 footer {
@@ -111,11 +129,55 @@ footer {
 .footer-column a {
   font-size: 14px;
   font-weight: 300;
+  color: var(--hueso);
+  border-bottom: 2px solid var(--steel);
+  transition: all 0.2s ease;
+}
+.footer-column a:hover {
   color: var(--light);
+  border-bottom: 2px solid var(--light);
+  scale: 1.02;
 }
 .footer-bottom {
-  border-top: 1px solid var(--light);
+  border-top: 1px solid var(--hueso);
   padding-top: 1.2em;
+}
+.newsletter-form {
+  display: flex;
+  width: 100%;
+  gap: 0.8em;
+}
+.newsletter-form input[type="email"] {
+  flex-grow: 1;
+  background-color: transparent;
+  border: 0px;
+  border-bottom: 1px solid var(--hueso);
+  font-family: inherit;
+  color: var(--light);
+  outline: none;
+  padding: 0.4em 0.2em;
+  border-radius: 0px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.newsletter-form input[type="email"]::placeholder {
+  color: var(--hueso); 
+  opacity: 1;  
+}
+.newsletter-form input[type="submit"]:hover {
+  background-color: var(--light);
+}
+/* footer: responsive */
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* buttons */
@@ -154,6 +216,17 @@ footer {
 .btn-primary:hover::after {
   width: 100%;
 }
+.btn-secondary {
+  background-color: var(--hueso);
+  font-family: inherit;
+  border: 0px;
+  color: var(--steel);
+  padding: 0.4em 0.8em;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 .btn-outline {
   background-color: transparent;
   border: 2px solid var(--dark);
@@ -167,4 +240,26 @@ footer {
 .btn-outline:hover {
   background-color: var(--trueorange);
   color: var(--light);
+}
+.btn-search {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+.btn-search svg {
+  width: 32px;
+  height: auto;
+}
+
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 512px) {
+  header {
+    padding: 0.6em 2em;
+  }
+  footer {
+    padding: 3.5em 2em;
+  }
 }
