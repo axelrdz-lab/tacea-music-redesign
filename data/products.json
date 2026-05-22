@@ -1,0 +1,118 @@
+[
+  {
+    "id": 1,
+    "slug": "bajo-electrico-mccartney",
+    "name": "Bajo Eléctrico McCartney",
+    "category": "bajos",
+    "price": 2902.66,
+    "discount": 0,
+    "description": "Bajo eléctrico de cuerpo sólido, ideal para todo género musical.",
+    "specs": {
+      "marca": "McCartney",
+      "tipo": "Bajo eléctrico"
+    },
+    "images": {
+      "main": "./assets/img/products/bajo-electrico-mccartney.png",
+      "gallery": [
+        "./assets/img/products/bajo-electrico-mccartney-2.png",
+        "./assets/img/products/bajo-electrico-mccartney-3.png",
+        "./assets/img/products/bajo-electrico-mccartney-4.png"
+      ]
+    },
+    "featured": false,
+    "stock": 5
+  },
+  {
+    "id": 2,
+    "slug": "mezcladora-qsc-touchmix-16",
+    "name": "Mezcladora QSC TouchMix-16",
+    "category": "mezcladoras",
+    "price": 43302.88,
+    "discount": 0,
+    "description": "Mezcladora digital de 16 canales con pantalla táctil y efectos integrados.",
+    "specs": {
+      "marca": "QSC",
+      "modelo": "TouchMix-16",
+      "canales": 16
+    },
+    "images": {
+      "main": "./assets/img/products/mezcladora-qsc-touchmix-16.png",
+      "gallery": [
+        "./assets/img/products/mezcladora-qsc-touchmix-16-2.png",
+        "./assets/img/products/mezcladora-qsc-touchmix-16-3.png",
+        "./assets/img/products/mezcladora-qsc-touchmix-16-4.png"
+      ]
+    },
+    "featured": false,
+    "stock": 3
+  },
+  {
+    "id": 3,
+    "slug": "combo-breaker",
+    "name": "Combo Breaker",
+    "category": "amplificadores",
+    "price": 44310,
+    "discount": 0,
+    "description": "Amplificador combo de alta potencia para guitarra eléctrica.",
+    "specs": {
+      "tipo": "Amplificador combo"
+    },
+    "images": {
+      "main": "./assets/img/products/combo-breaker.png",
+      "gallery": [
+        "./assets/img/products/combo-breaker-2.png",
+        "./assets/img/products/combo-breaker-3.png",
+        "./assets/img/products/combo-breaker-4.png"
+      ]
+    },
+    "featured": false,
+    "stock": 4
+  },
+  {
+    "id": 4,
+    "slug": "tuba-sousafon-jupiter",
+    "name": "Tuba Sousafon Jupiter",
+    "category": "vientos",
+    "price": 121292.06,
+    "discount": 0,
+    "description": "Sousafón profesional de la marca Jupiter, ideal para bandas de marcha.",
+    "specs": {
+      "marca": "Jupiter",
+      "tipo": "Sousafón"
+    },
+    "images": {
+      "main": "./assets/img/products/tuba-sousafon-jupiter.png",
+      "gallery": [
+        "./assets/img/products/tuba-sousafon-jupiter-2.png",
+        "./assets/img/products/tuba-sousafon-jupiter-3.png",
+        "./assets/img/products/tuba-sousafon-jupiter-4.png"
+      ]
+    },
+    "featured": false,
+    "stock": 2
+  },
+  {
+    "id": 5,
+    "slug": "piano-yamaha-np12b",
+    "name": "Piano Yamaha NP12B",
+    "category": "teclados",
+    "price": 7434,
+    "discount": 0,
+    "description": "Piano digital portátil de 61 teclas con sonido de cola de concierto Yamaha.",
+    "specs": {
+      "marca": "Yamaha",
+      "modelo": "NP12B",
+      "teclas": 61
+    },
+    "images": {
+      "main": "./assets/img/products/piano-yamaha-np12b.png",
+      "gallery": [
+        "./assets/img/products/piano-yamaha-np12b-2.png",
+        "./assets/img/products/piano-yamaha-np12b-3.png",
+        "./assets/img/products/piano-yamaha-np12b-4.png"
+      ]
+    },
+    "featured": false,
+    "stock": 7
+  }
+]

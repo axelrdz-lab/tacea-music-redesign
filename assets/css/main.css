@@ -1,6 +1,6 @@
 
 :root {
-  /* color variables */
+  /* normal colors */
   --steel: #66727C;
   --lightblue: #90ADBB;
   --cuteorange: #F37D01;
@@ -8,6 +8,10 @@
   --hueso: #E6E4D5;
   --light: #fff;
   --dark: #242323;
+  /* opac colors */
+  --trueorange-opac: rgba(238, 60, 12, 0.4);
+  --light-opac: rgba(255, 255, 255, 0.8);
+  --dark-opac: rgba(36, 35, 35, 0.6);
 }
 
 /* global styles */
@@ -38,17 +42,111 @@ svg {
   height: auto;
   color: var(--dark);
 }
+/* global text styles */
+h2 {
+  font-size: 2.5em;
+  font-weight: 400;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+p {
+  margin: 0;
+  font-size: 14px;
+}
 
 /* flex directions */
 .row {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 1em;
 }
 .column {
   display: flex;
   flex-direction: column;
   gap: 1em;
+}
+
+/* general div styles */
+.section {
+  display: flex;
+  flex-direction: column;
+  padding: 4em 5.5em;
+  gap: 1.5em;
+}
+.horizontal-div {
+  width: 100%;
+  height: 2px;
+  background-color: var(--dark);
+}
+.carousel-row {
+  display: flex;
+  gap: 1.2em;
+  width: 100%;
+  overflow-x: auto;
+  padding: 1em 0.5em;
+  scroll-behavior: smooth;
+  scrollbar-width: none
+}
+.carousel-row::-webkit-scrollbar {
+  display: none;
+}
+.pill-badge {
+  background-color: var(--hueso);
+  color: var(--dark);
+  border: 2px solid var(--dark);
+  font-size: 12px;
+  padding: 0.2em 0.6em;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+/* cards */
+.product-card {
+  color: var(--dark);
+  background-color: var(--hueso);
+  border: 2px solid var(--dark);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em 2em;
+  gap: 0.2em;
+  width: 16em;
+  flex-shrink: 0;
+}
+.product-card img {
+  width: 100%;
+  height: auto;
+  padding-bottom: 1em;
+}
+.product-card h3 {
+  min-height: 2.5em;
+  margin: 0;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 500;
+}
+.product-card .product-category {
+  color: var(--dark);
+  text-transform: capitalize;
+  margin: 0;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+.product-card .row {
+  margin-top: 0.4em;
+  gap: 0.5em;
+}
+.product-card p {
+  font-size: 16px;
+  margin: 0;
+  margin-right: 0.5em;
+}
+.product-card .product-category:hover {
+  color: var(--trueorange);
+  scale: 1.02;
+  text-decoration: underline;
 }
 
 /* NAVBAR */
@@ -96,7 +194,7 @@ header {
 
 /* FOOTER */
 footer {
-  background-color: var(--steel);
+  background-color: var(--dark);
   color: var(--hueso);
   padding: 3.5em 5.5em;
 }
@@ -130,7 +228,7 @@ footer {
   font-size: 14px;
   font-weight: 300;
   color: var(--hueso);
-  border-bottom: 2px solid var(--steel);
+  border-bottom: 2px solid var(--dark);
   transition: all 0.2s ease;
 }
 .footer-column a:hover {
@@ -166,6 +264,7 @@ footer {
   opacity: 1;  
 }
 .newsletter-form input[type="submit"]:hover {
+  color: var(--light);
   background-color: var(--light);
 }
 /* footer: responsive */
@@ -186,10 +285,9 @@ footer {
   overflow: hidden;
   padding: 0.8em 1.6em;
 
-  background-color: var(--lightblue);
+  background-color: var(--dark);
   border: 2px solid var(--dark);
   border-radius: 5px;
-  color: var(--light);
   
   font-size: 14px;
   cursor: pointer;
@@ -198,7 +296,7 @@ footer {
 .btn-primary span {
   position: relative;
   z-index: 1;
-  color: var(--dark);
+  color: var(--light);
   transition: color 0.3s ease;
 }
 
@@ -210,7 +308,7 @@ footer {
   position: absolute;
   inset: 0;
   width: 0%;
-  background-color: var(--steel);
+  background-color: var(--trueorange);
   transition: all 0.3s ease;
 }
 .btn-primary:hover::after {
@@ -220,7 +318,7 @@ footer {
   background-color: var(--hueso);
   font-family: inherit;
   border: 0px;
-  color: var(--steel);
+  color: var(--dark);
   padding: 0.4em 0.8em;
   border-radius: 5px;
   font-size: 14px;
@@ -252,14 +350,56 @@ footer {
   width: 32px;
   height: auto;
 }
+.btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+.btn-icon svg:hover {
+  color: var(--trueorange);
+  scale: 1.1;
+}
 
 
 /* RESPONSIVE DESIGN */
-@media (max-width: 512px) {
+@media (max-width: 768px) {
+  .header-logo {
+    width: 120px;
+  }
+  h2 {
+    font-size: 2em;
+  }
+}
+@media (max-width: 572px) {
   header {
     padding: 0.6em 2em;
   }
+
   footer {
     padding: 3.5em 2em;
+  }
+  .section { 
+    padding: 3em 2em;
+  }
+}
+@media (max-width: 512px) {
+  .header-logo {
+    width: 100px;
+  }
+  h2 {
+    font-size: 1.8em;
+  }
+}
+@media (max-width: 448px) {
+  header {
+    padding: 0.6em 1em;
+  }
+  footer {
+    padding: 3.5em 1em;
+  }
+  .section { 
+    padding: 3em 1em;
   }
 }
