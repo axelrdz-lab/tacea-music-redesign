@@ -5,6 +5,7 @@
   justify-content: space-between;
   align-items: start;
   gap: 5em;
+  margin-top: 3.5em;
   padding: 4em 3.5em;
 }
 .banner-content {
@@ -19,7 +20,7 @@
   color: var(--dark);
   text-wrap: wrap;
   line-height: 1.1em;
-  font-size: 4em;
+  padding: 0.6em 0;
   transition: all 0.3s ease;
 }
 .banner-content .highlight {
@@ -50,15 +51,6 @@
   width: 2px;
   height: 8em;
   background-color: var(--dark);
-}
-
-.cinta {
-  content: "";
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3.5em;
-  background-color: var(--steel);
 }
 
 /* special offers section */
@@ -143,13 +135,15 @@
 /* get their style section */
 .get-their-style {
   color: var(--hueso);
-  background-color: var(--steel);
+  background: var(--radial-gradient-hueso-steel), 
+    url('../img/get_their_style_bg.png') center / cover no-repeat;
   border: 2px solid var(--dark);
   min-height: 25em;
   display: flex;
-  gap: 2em;
+  gap: 1em;
   border-radius: 5px;
-  padding: 0 3.5em;
+  padding-left: 3.5em;
+  transition: all 0.3s ease;
 }
 .get-their-style .img-container {
   position: relative;
@@ -160,29 +154,30 @@
   left: 0em;
   bottom: 0em;
   width: auto;
-  height: 32em;
+  height: 30em;
   border-radius: 5px;
+  transition: all 0.3s ease;
 }
 .get-their-style .text-container {
+  background-color: var(--steel-40);
+  backdrop-filter: blur(15px);
+  border-left: 2px solid var(--dark);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 3.5em;
   gap: 1em;
-}
-.get-their-style .text-container h1 {
-  font-size: 3.5em;
-  margin: 0;
+  transition: all 0.3s ease;
 }
 .get-their-style .text-container p {
-  border-top: 2px solid var(--hueso);
-  padding: 2em 0;
   margin: 0;
 }
-.get-their-style .btn-primary {
-  background-color: var(--hueso);
+.get-their-style .text-container .row {
+  gap: 0.6em;
 }
-.get-their-style .btn-primary span {
-  color: var(--dark);
+.get-their-style .text-container .btn-primary {
+  background-color: var(--hueso);
+  height: 100%;
 }
 
 /* RESPONSIVE DESIGN */
@@ -192,6 +187,15 @@
   }
   .banner-content h1 {
     font-size: 3.5em;
+  }
+  .get-their-style {
+    padding-left: 0;
+  }
+  .get-their-style .img-container {
+    width: 100%;
+  }
+  .get-their-style .text-container {
+    padding: 2em;
   }
 }
 @media (max-width: 1152px) {
@@ -211,9 +215,9 @@
     font-size: 2.5em;
   }
   .banner-content img {
-  z-index: -1;
-  opacity: 0.4;
-  top: -20em;
+    z-index: -1;
+    opacity: 0.4;
+    top: -20em;
   }
   .category-selector-header h1 {
     font-size: 2.5em;
@@ -223,6 +227,33 @@
   .banner-content img {
     top: -18em;
     opacity: 0.2;
+  }
+  
+  .get-their-style .img-container {
+    width: 150%;
+  }
+}
+@media (max-width: 896px) {
+  .get-their-style {
+    background: var(--radial-center-gradient), 
+      url('../img/get_their_style_bg.png') center / cover no-repeat;
+    flex-direction: column;
+    align-items: space-between;
+    width: 100%;
+    padding: 0;
+  }
+  .get-their-style .img-container {
+    width: 100%;
+    height: 8em;
+  }
+  .get-their-style img {
+    top: -5em;
+    left: 50%; 
+    transform: translateX(-50%);
+  }
+  .get-their-style .text-container {
+    border-left: none;
+    border-top: 2px solid var(--dark);
   }
 }
 @media (max-width: 768px) {
