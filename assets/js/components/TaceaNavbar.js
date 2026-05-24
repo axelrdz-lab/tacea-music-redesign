@@ -1,6 +1,10 @@
 class TaceaNavbar extends HTMLElement {
 
   connectedCallback() {
+
+    const isRoot = !window.location.pathname.includes('/pages/');
+    const base = isRoot ? '.' : '..';
+
     this.innerHTML = /*html*/`
       <!-- navigation menu -->
       <header class="column">
@@ -14,16 +18,16 @@ class TaceaNavbar extends HTMLElement {
               </svg>
             </button>
             <!-- logo -->
-            <a href="index.html">
-              <img class="header-logo" src="../assets/img/logo_tacea.png" alt="logo Tacea Music">
+            <a href="${base}/index.html">
+              <img class="header-logo" src="${base}/assets/img/logo_tacea.png" alt="logo Tacea Music">
             </a>   
           </div> 
           <!-- links -->
           <nav class="navbar-links">
             <ul>
-              <li><a class="btn-outline" href="../../../index.html">INICIO</a></li>
-              <li><a class="btn-outline" href="../../../pages/blog.html">BLOG</a></li>
-              <li><a class="btn-outline" href="../../../pages/contacto.html">CONTÁCTANOS</a></li>
+              <li><a class="btn-outline" href="${base}/index.html">INICIO</a></li>
+              <li><a class="btn-outline" href="${base}/pages/blog.html">BLOG</a></li>
+              <li><a class="btn-outline" href="${base}/pages/contacto.html">CONTÁCTANOS</a></li>
             </ul>
           </nav>
           <!-- other actions -->
