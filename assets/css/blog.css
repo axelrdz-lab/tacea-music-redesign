@@ -1,0 +1,233 @@
+
+.featured-posts {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5em;
+  min-height: 39em;
+  transition: all 0.3s ease;
+}
+.featured-post {
+  position: relative;
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+
+  border: 2px solid var(--dark);
+  border-radius: 0.5em;
+  
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.featured-post::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--dark-40);
+  z-index: 0;
+}
+.featured-post:hover {
+  transform: scale(1.02);
+}
+.featured-posts .column {
+  flex: 1.8;
+  gap: 1.5em;
+}
+.featured-post .card {
+  position: absolute;
+  border: 2px solid var(--dark);
+  border-radius: 0.5em;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+  width: 25em;
+  gap: 0.5em;
+
+  color: var(--hueso);  
+  padding: 2em;
+  background-color: var(--steel-40);
+  backdrop-filter: blur(15px);
+
+  transition: all 0.3s ease;
+}
+#right-post .card {
+  right: -2em;
+  bottom: -1.2em;
+}
+#left-top-post .card {
+  right: -0.8em;
+  bottom: 1em;
+}
+#left-bottom-post .card {
+  left: -1.2em;
+  bottom: -1.2em;
+}
+.featured-post .pill-badge {
+  position: absolute;
+  border-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+#right-post .pill-badge {
+  top: 4em;
+}
+#left-top-post .pill-badge {
+  top: 2em;
+}
+#left-bottom-post .pill-badge {
+  top: 2em;
+}
+
+/* posts cards for post list */
+.post-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+}
+.post-list .card {
+  height: 12em;
+
+  background-color: var(--hueso);
+  border: 2px solid var(--dark);
+  border-radius: 5px;
+
+  display: flex;
+  
+  transition: all 0.3s ease;
+}
+.post-list .card img {
+  width: 12em;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.post-list .card .card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-left: 2px solid var(--dark);
+
+  padding: 1em 2em;
+  gap: 0.5em;
+
+  color: var(--dark);
+}
+.post-list .card .card-content a {
+  color: var(--dark);
+  text-transform: capitalize;
+  margin: 0;
+  width: fit-content;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+.post-list .card .card-content a:hover {
+  color: var(--trueorange);
+  text-decoration: underline;
+}
+.post-list .card:hover {
+  color: var(--hueso);
+  background: var(--steel-40);
+  transform: scale(1.02);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1280px) {
+  .featured-post .card {
+    width: 20em;
+    padding: 1.5em;
+  }
+  .post-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 1024px) {
+  .featured-posts {
+    flex-direction: column;
+  }
+  .featured-posts .column {
+    flex-direction: row;
+    flex: 1;
+  }
+  #right-post .card {
+    right: -2em;
+    bottom: -1em;
+  }
+  #left-top-post .card {
+    left: -2em;
+    right: auto;
+    bottom: 1em;
+  }
+  #left-bottom-post .card {
+    left: auto;
+    right: -2em;
+    bottom: 1em;
+  }
+  .featured-post .card p {
+    display: -webkit-box;
+    line-clamp: 2; 
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden; 
+  }
+}
+@media (max-width: 896px) {
+  .featured-posts .column {
+    flex-direction: column;
+    flex: 1;
+  }
+  .featured-post {
+    min-height: 20em;
+  }
+  .post-list .card {
+    height: auto;
+    flex-direction: column;
+  }
+  .post-list .card img {
+    height: 14em;
+    width: 100%;
+  }
+  .post-list .card .card-content {
+    border-left: 0;
+    border-top: 2px solid var(--dark);
+  }
+}
+@media (max-width: 572px) {
+  .featured-posts,
+  .featured-posts .column {
+    gap: 1em;
+  }
+  #right-post .card {
+    right: -1em;
+    bottom: -1em;
+  }
+  #left-top-post .card {
+    left: -1em;
+    right: auto;
+    bottom: 1em;
+  }
+  #left-bottom-post .card {
+    left: auto;
+    right: -1em;
+    bottom: 1em;
+  }
+}
+@media (max-width: 448px) {
+  .featured-post .card {
+    width: 90%;
+  }
+  #right-post .card {
+    left: -0.5em;
+    bottom: 0.5em;
+  }
+  #left-top-post .card {
+    left: -0.5em;
+    right: auto;
+    bottom: 0.5em;
+  }
+  #left-bottom-post .card {
+    left: auto;
+    right: -0.5em;
+    bottom: 0.5em;
+  }
+}

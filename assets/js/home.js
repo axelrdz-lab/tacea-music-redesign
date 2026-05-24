@@ -9,7 +9,7 @@ async function loadCategories() {
     const catDiv = document.createElement('a');
     catDiv.classList.add('cat');
     catDiv.href = `product-list.html?category=${category.id}`;
-    catDiv.innerHTML = `
+    catDiv.innerHTML = /*html*/`
       <img src="${category.image}" alt="${category.name}">
       <p class="pill-badge">${category.name}</p>
     `;
@@ -29,7 +29,7 @@ async function loadSpecialOffers() {
   specialOffers.forEach(product => {
     const productDiv = document.createElement('div');
     productDiv.classList.add('product-card');
-    productDiv.innerHTML = `
+    productDiv.innerHTML = /*html*/`
       <img src="${product.images.main}" alt="${product.name}">
       <a class="product-category" href="product-list.html?category=${product.categoryId}">${product.category}</a>
       <h3>${product.name}</h3>

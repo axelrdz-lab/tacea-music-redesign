@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: start;
+  overflow: hidden;
   gap: 5em;
   margin-top: 3.5em;
   padding: 4em 3.5em;
@@ -169,6 +170,9 @@
   gap: 1em;
   transition: all 0.3s ease;
 }
+.get-their-style .text-container h2 {
+  color: var(--hueso);
+}
 .get-their-style .text-container p {
   margin: 0;
 }
@@ -176,7 +180,6 @@
   gap: 0.6em;
 }
 .get-their-style .text-container .btn-primary {
-  background-color: var(--hueso);
   height: 100%;
 }
 

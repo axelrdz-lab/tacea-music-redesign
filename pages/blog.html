@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/blog.css">
+
+    <script src="../assets/js/components/TaceaNavbar.js"></script>
+    <script src="../assets/js/components/TaceaFooter.js"></script>
+
+    <title>Tacea Music | Blog</title>
+
+  </head>
+
+  <body>
+
+    <tacea-navbar></tacea-navbar>
+
+    <!-- featured posts -->
+    <section class="section featured-posts">
+      <!-- left posts -->
+      <div class="column">
+        <a class="featured-post" id="left-top-post"></a>
+        <a class="featured-post" id="left-bottom-post"></a>
+      </div>
+      <!-- right post -->
+      <a class="featured-post" id="right-post"></a>
+    </section>
+
+    <!-- section all posts -->
+    <section class="section all-posts">
+      <div class="row">
+        <div class="horizontal-div"></div>
+        <h2>Publicaciones</h2>
+        <div class="horizontal-div"></div>
+      </div>
+      <div class="post-list"></div>
+    </section>
+
+    <tacea-footer></tacea-footer>
+
+    <script src="../assets/js/blog.js"></script>
+    
+  </body>
+
+</html>

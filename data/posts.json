@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "slug": "como-elegir-tu-primera-guitarra",
+    "title": "Cómo elegir tu primera guitarra eléctrica",
+    "excerpt": "Guía completa para músicos principiantes que buscan su primer instrumento sin perderse en opciones.",
+    "cover": "../assets/img/posts/guitarra-principiante.png",
+    "author": {
+      "name": "Nathy Peluso",
+      "avatar": "../assets/img/blog/avatar_tacea.png"
+    },
+    "date": "2026-03-15",
+    "category": "guias",
+    "tags": ["guitarra", "principiantes", "consejos"],
+    "contentPath": "./data/posts/como-elegir-tu-primera-guitarra.html",
+    "featured": true,
+    "readTime": 5
+  },
+  {
+    "id": 2,
+    "slug": "top-5-pedales-para-guitarra",
+    "title": "Top 5 pedales para guitarra eléctrica",
+    "excerpt": "Descubre los mejores pedales para guitarra eléctrica que transformarán tu sonido y te inspirarán a crear música única.",
+    "cover": "../assets/img/posts/pedales-guitarra.png",
+    "author": {
+      "name": "Robert Pattinson",
+      "avatar": "../assets/img/blog/avatar_tacea.png"
+    },
+    "date": "2026-04-10",
+    "category": "reviews",
+    "tags": ["pedales", "guitarra", "efectos"],
+    "contentPath": "./data/posts/top-5-pedales-para-guitarra.html",
+    "featured": true,
+    "readTime": 7
+  },
+  {
+    "id": 3,
+    "slug": "cuidado-de-tu-instrumento",
+    "title": "Cómo cuidar tu instrumento musical",
+    "excerpt": "Aprende los mejores consejos para mantener tu instrumento musical en perfecto estado y prolongar su vida útil.",
+    "cover": "../assets/img/posts/cuidado-instrumento.png",
+    "author": {
+      "name": "Shakira Mebarak",
+      "avatar": "../assets/img/blog/avatar_tacea.png"
+    },
+    "date": "2026-05-05",
+    "category": "guias",
+    "tags": ["cuidado", "instrumentos", "mantenimiento"],
+    "contentPath": "../data/posts/cuidado-de-tu-instrumento.html",
+    "featured": true,
+    "readTime": 4
+  }
+]
