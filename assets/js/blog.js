@@ -17,6 +17,7 @@ async function loadFeaturedPosts() {
   targets.forEach((post, index) => {
     const postContainer = containers[index];
     postContainer.style.backgroundImage = `url(${post.cover})`;
+    postContainer.href = `post.html?id=${post.id}`;
     postContainer.innerHTML = /*html*/`
       <div class="card">
         <h3>${post.title}</h3>
@@ -28,21 +29,35 @@ async function loadFeaturedPosts() {
 
 }
 
-async function loadPosts() {
+async function loadPosts(category = 'todas') {
 
   const res = await fetch('../data/posts.json');
   const posts = await res.json();
 
   const postsContainer = document.querySelector('.post-list');
+  postsContainer.innerHTML = ''; // limpiar posts anteriores
 
-  posts.forEach(post => {
+  const filteredPosts = category === 'todas' 
+    ? posts 
+    : posts.filter(post => post.categories.includes(category));
+
+  filteredPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  filteredPosts.forEach(post => {
     const postElement = document.createElement('a');
-    postElement.classList.add('card');
+    postElement.classList.add('post-card');
     postElement.href = `post.html?id=${post.id}`;
+
+    const categoriesHTML = post.categories.map(category => {
+      return /*html*/`
+        <a href="../index.html?category=${encodeURIComponent(category)}" class="category-btn">${category}</a>
+      `;
+    }).join('');
+
     postElement.innerHTML = /*html*/`
       <img src=${post.cover} alt="${post.title}">
       <div class="card-content">
-        <a href="#">${post.category}</a>
+        <div class="row">${categoriesHTML}</div>
         <h3>${post.title}</h3>
         <p>${post.excerpt}</p>
       </div>
@@ -52,5 +67,43 @@ async function loadPosts() {
 
 }
 
+async function loadPostCategories() {
+
+  const res = await fetch('../data/posts.json');
+  const posts = await res.json();
+
+  const container = document.querySelector('#posts-categories');
+
+  const staticCategories = ['todas', '+ recientes', '+ populares'];
+  const postCategories = [...new Set(posts.flatMap(post => post.categories))];
+  const categories = [...staticCategories, ...postCategories];
+
+  categories.forEach(category => {
+    const categoryBtn = document.createElement('button');
+    categoryBtn.classList.add('category-btn');
+    if (category === 'todas') categoryBtn.classList.add('active');
+    categoryBtn.dataset.category = category;
+    categoryBtn.textContent = category;
+    categoryBtn.addEventListener('click', () => {
+      onCategorySelected(categoryBtn);
+    });
+    container.appendChild(categoryBtn);
+  });
+
+}
+
+function onCategorySelected(categoryBtn) {
+
+  const category = categoryBtn.dataset.category;
+  // desactivar todos los botones
+  document.querySelectorAll('.category-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  categoryBtn.classList.add('active');
+  loadPosts(category);
+
+}
+
 loadFeaturedPosts();
 loadPosts();
+loadPostCategories();

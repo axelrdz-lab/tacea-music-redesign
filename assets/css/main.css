@@ -94,6 +94,9 @@ p {
 }
 
 /* general div styles */
+.row h2 {
+  flex-shrink: 0;
+}
 .section {
   display: flex;
   flex-direction: column;
@@ -316,6 +319,33 @@ footer {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+.category-btn {
+  background-color: var(--steel-40);
+  border: 2px solid var(--dark);
+  border-radius: 5px;
+  color: var(--dark);
+  padding: 0.2em 0.6em;
+
+  font-size: 14px;
+  text-transform: capitalize;
+  font-family: inherit;
+  text-wrap: nowrap;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.category-btn a {
+  color: var(--dark);
+}
+.category-btn:hover {
+  scale: 1.02;
+  color: var(--hueso);
+  background: var(--steel);
+}
+.active {
+  background-color: var(--steel) !important;
+  color: var(--hueso) !important;
+}
 .btn-outline {
   background-color: transparent;
   border: 2px solid var(--dark);
@@ -358,6 +388,7 @@ footer {
   gap: 0.2em;
   width: 16em;
   flex-shrink: 0;
+  transition: all 0.3s ease;
 }
 .product-card img {
   width: 100%;
@@ -365,6 +396,11 @@ footer {
   padding-bottom: 1em;
 }
 .product-card h3 {
+  display: -webkit-box;
+  line-clamp: 2; 
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden; 
   min-height: 2.5em;
   margin: 0;
   text-align: center;
@@ -386,6 +422,7 @@ footer {
   font-size: 16px;
   margin: 0;
   margin-right: 0.5em;
+
 }
 .product-card:hover {
   background: var(--steel-40);
@@ -395,6 +432,54 @@ footer {
   color: var(--trueorange);
   scale: 1.02;
   text-decoration: underline;
+}
+.post-card {
+  display: flex;
+  height: 12em;
+
+  background-color: var(--hueso);
+  border: 2px solid var(--dark);
+  border-radius: 5px;
+  
+  transition: all 0.3s ease;
+}
+.post-card img {
+  width: 12em;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.post-card .card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-left: 2px solid var(--dark);
+
+  padding: 1em 2em;
+  gap: 0.5em;
+
+  color: var(--dark);
+}
+.post-card .card-content a {
+  color: var(--dark);
+  text-transform: capitalize;
+  margin: 0;
+  width: fit-content;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+.post-card .card-content a:hover {
+  color: var(--trueorange);
+  text-decoration: underline;
+}
+.post-card:hover {
+  color: var(--hueso);
+  background: var(--steel-40);
+  transform: scale(1.02);
+}
+.post-card .row {
+  gap: 0.5em;
 }
 
 @media (max-width: 1024px) {
@@ -427,17 +512,41 @@ footer {
     font-size: 1em;
   }
   p {
-    font-size: 12px;
+    font-size: 13px;
   }
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 672px) {
+  .post-card {
+    height: 8em;
+  }
+  .post-card img {
+    width: 8em;
+  }
+  .post-card .card-content {
+    padding: 1em;
+  }
+  .post-card .card-content h3 {
+    display: -webkit-box;
+    line-clamp: 2; 
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden; 
+  }
+  .post-card .card-content p {
+    display: -webkit-box;
+    line-clamp: 1; 
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden; 
   }
 }
 @media (max-width: 572px) {
   header .top-navbar, .bottom-navbar {
     padding: 0.6em 2em;
   }
-
   footer {
     padding: 3.5em 2em;
   }
@@ -446,6 +555,19 @@ footer {
   }
   .btn-primary {
     font-size: 14px;
+  }
+  .category-btn {
+    border: 1.5px solid var(--dark);
+  }
+  .post-card .category-btn,
+  .post-header .category-btn {
+    font-size: 12px !important;
+  }
+  .product-card {
+    width: 14em;
+  }
+  .post-card .row {
+    gap: 0.2em;
   }
 }
 @media (max-width: 512px) {
@@ -459,7 +581,7 @@ footer {
     font-size: 1.6em;
   }
   h3 {
-    font-size: 0.8em;
+    font-size: 0.9em;
   }
 }
 @media (max-width: 448px) {

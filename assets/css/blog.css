@@ -84,51 +84,15 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 1em;
 }
-.post-list .card {
-  height: 12em;
 
-  background-color: var(--hueso);
-  border: 2px solid var(--dark);
-  border-radius: 5px;
-
-  display: flex;
-  
-  transition: all 0.3s ease;
-}
-.post-list .card img {
-  width: 12em;
-  height: 100%;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-.post-list .card .card-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  border-left: 2px solid var(--dark);
-
-  padding: 1em 2em;
+#posts-categories {
   gap: 0.5em;
-
-  color: var(--dark);
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none
 }
-.post-list .card .card-content a {
-  color: var(--dark);
-  text-transform: capitalize;
-  margin: 0;
-  width: fit-content;
-  font-size: 14px;
-  transition: all 0.2s ease;
-}
-.post-list .card .card-content a:hover {
-  color: var(--trueorange);
-  text-decoration: underline;
-}
-.post-list .card:hover {
-  color: var(--hueso);
-  background: var(--steel-40);
-  transform: scale(1.02);
+#posts-categories::-webkit-scrollbar {
+  display: none;
 }
 
 /* RESPONSIVE DESIGN */
