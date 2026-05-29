@@ -1,22 +1,22 @@
 [
   {
     "id": 1,
-    "slug": "bajo-electrico-mccartney",
-    "name": "Bajo Eléctrico McCartney",
+    "name": "Bajo eléctrico TAGIMA 5 CUERDAS TW-73-5-BK-DF-MG",
+    "brand": "TAGIMA",
     "category": "bajos",
     "price": 2902.66,
-    "discount": 0,
-    "description": "Bajo eléctrico de cuerpo sólido, ideal para todo género musical.",
+    "discount": 5,
+    "description": "El Bajo Eléctrico Tagima 5 Cuerdas Pasivo TW Series Negro es la elección perfecta para músicos que buscan un instrumento de calidad y versatilidad. Con un acabado brillante en un elegante color negro, este bajo destaca no solo por su estética, sino también por su construcción sólida y su diseño ergonómico.",
     "specs": {
       "marca": "McCartney",
       "tipo": "Bajo eléctrico"
     },
     "images": {
-      "main": "./assets/img/products/bajo-electrico-mccartney.png",
+      "main": "./assets/img/products/bajo-electrico-tagima.png",
       "gallery": [
-        "./assets/img/products/bajo-electrico-mccartney-2.png",
-        "./assets/img/products/bajo-electrico-mccartney-3.png",
-        "./assets/img/products/bajo-electrico-mccartney-4.png"
+        "./assets/img/products/bajo-electrico-tagima-2.png",
+        "./assets/img/products/bajo-electrico-tagima-3.png",
+        "./assets/img/products/bajo-electrico-tagima-4.png"
       ]
     },
     "featured": false,
@@ -24,11 +24,10 @@
   },
   {
     "id": 2,
-    "slug": "mezcladora-qsc-touchmix-16",
     "name": "Mezcladora QSC TouchMix-16",
     "category": "mezcladoras",
     "price": 43302.88,
-    "discount": 0,
+    "discount": 15,
     "description": "Mezcladora digital de 16 canales con pantalla táctil y efectos integrados.",
     "specs": {
       "marca": "QSC",
@@ -48,11 +47,10 @@
   },
   {
     "id": 3,
-    "slug": "combo-breaker",
     "name": "Combo Breaker",
     "category": "amplificadores",
     "price": 44310,
-    "discount": 0,
+    "discount": 10,
     "description": "Amplificador combo de alta potencia para guitarra eléctrica.",
     "specs": {
       "tipo": "Amplificador combo"
@@ -70,11 +68,10 @@
   },
   {
     "id": 4,
-    "slug": "tuba-sousafon-jupiter",
     "name": "Tuba Sousafon Jupiter",
     "category": "vientos",
     "price": 121292.06,
-    "discount": 0,
+    "discount": 20,
     "description": "Sousafón profesional de la marca Jupiter, ideal para bandas de marcha.",
     "specs": {
       "marca": "Jupiter",
@@ -93,11 +90,10 @@
   },
   {
     "id": 5,
-    "slug": "piano-yamaha-np12b",
     "name": "Piano Yamaha NP12B",
     "category": "teclados",
     "price": 7434,
-    "discount": 0,
+    "discount": 40,
     "description": "Piano digital portátil de 61 teclas con sonido de cola de concierto Yamaha.",
     "specs": {
       "marca": "Yamaha",
@@ -114,5 +110,27 @@
     },
     "featured": false,
     "stock": 7
+  },
+    {
+    "id": 6,
+    "name": "Guitarra Eléctrica Pro Series Signature Jeff Loomis Kelly™ Ash",
+    "category": "guitarras",
+    "price": 36710,
+    "discount": 0,
+    "description": "Esta agresiva guitarra cuenta con un cuerpo de tilo con una tapa de fresno arenado acabado en negro con binding blanco para un aspecto angustiado y amenazante. La construcción del mástil de arce a través del cuerpo crea un mayor sustain e incluye un refuerzo de grafito para la máxima estabilidad contra los rigores y estragos de la carretera. Diseñado para la velocidad, su diapasón de ébano de radio compuesto de 12«-16» alberga 24 trastes jumbo y elegantes incrustaciones de aleta de tiburón perladas.",
+    "specs": {
+      "marca": "Jackson",
+      "modelo": "Pro Series"
+    },
+    "images": {
+      "main": "./assets/img/products/guitarra-electrica-pro-series-signature-jeff-loomis-kelly-ash.png",
+      "gallery": [
+        "./assets/img/products/guitarra-electrica-pro-series-signature-jeff-loomis-kelly-ash-2.png",
+        "./assets/img/products/guitarra-electrica-pro-series-signature-jeff-loomis-kelly-ash-3.png",
+        "./assets/img/products/guitarra-electrica-pro-series-signature-jeff-loomis-kelly-ash-4.png"
+      ]
+    },
+    "featured": true,
+    "stock": 3
   }
 ]

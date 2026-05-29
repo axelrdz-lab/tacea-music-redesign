@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "productId": 1,
+    "author": "Carlos M.",
+    "avatar": "../assets/img/reviews/avatar1.png",
+    "rating": 5,
+    "date": "2026-04-10",
+    "title": "Increíble guitarra para principiantes",
+    "body": "La compré hace dos meses y ha superado todas mis expectativas. El sonido es limpio y el mástil es muy cómodo para aprender."
+  },
+  {
+    "id": 2,
+    "productId": 1,
+    "author": "Diana R.",
+    "avatar": "../assets/img/reviews/avatar2.png",
+    "rating": 4,
+    "date": "2026-05-02",
+    "title": "Buena relación calidad-precio",
+    "body": "Para el precio que tiene es una excelente opción. Las pastillas podrían ser mejores pero para practicar cumple perfectamente."
+  },
+  {
+    "id": 3,
+    "productId": 2,
+    "author": "Roberto S.",
+    "avatar": "../assets/img/reviews/avatar3.png",
+    "rating": 5,
+    "date": "2026-03-18",
+    "title": "El mejor pedal que he probado",
+    "body": "Llevo años buscando este sonido y finalmente lo encontré. La construcción es sólida y los controles son muy intuitivos."
+  }
+]

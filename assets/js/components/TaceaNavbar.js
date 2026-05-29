@@ -10,7 +10,7 @@ class TaceaNavbar extends HTMLElement {
       <header class="column">
         <!-- top navbar -->
         <div class="row top-navbar">
-          <div class="row">
+          <div class="row logo">
             <!-- hamburger menu -->
             <button class="hamburger-btn">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">

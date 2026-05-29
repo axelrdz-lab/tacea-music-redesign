@@ -37,32 +37,28 @@ async function loadPosts(category = 'todas') {
   const postsContainer = document.querySelector('.post-list');
   postsContainer.innerHTML = ''; // limpiar posts anteriores
 
-  const filteredPosts = category === 'todas' 
-    ? posts 
-    : posts.filter(post => post.categories.includes(category));
+  const sortedPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+  let filteredPosts;
+  
+  if (category === 'todas') {
+    filteredPosts = sortedPosts
+  }
+  else if (category === 'populares') {
+    filteredPosts = sortedPosts.sort((a,b) => b.views - a.views)
+  } else {
+    filteredPosts = posts.filter(post => post.categories.includes(category));
+  }
 
-  filteredPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
   filteredPosts.forEach(post => {
-    const postElement = document.createElement('a');
-    postElement.classList.add('post-card');
-    postElement.href = `post.html?id=${post.id}`;
-
-    const categoriesHTML = post.categories.map(category => {
-      return /*html*/`
-        <a href="../index.html?category=${encodeURIComponent(category)}" class="category-btn">${category}</a>
-      `;
-    }).join('');
-
-    postElement.innerHTML = /*html*/`
-      <img src=${post.cover} alt="${post.title}">
-      <div class="card-content">
-        <div class="row">${categoriesHTML}</div>
-        <h3>${post.title}</h3>
-        <p>${post.excerpt}</p>
-      </div>
-    `;
-    postsContainer.appendChild(postElement);
+    const newPost = document.createElement('post-card')
+    newPost.setAttribute('href', `post.html?id=${post.id}`)
+    newPost.setAttribute('cover', post.cover)
+    newPost.setAttribute('categories', JSON.stringify(post.categories))
+    newPost.setAttribute('title', post.title)
+    newPost.setAttribute('excerpt', post.excerpt)
+    newPost.setAttribute('views', post.views)
+    postsContainer.appendChild(newPost)
   });
 
 }
@@ -74,7 +70,7 @@ async function loadPostCategories() {
 
   const container = document.querySelector('#posts-categories');
 
-  const staticCategories = ['todas', '+ recientes', '+ populares'];
+  const staticCategories = ['todas', 'populares'];
   const postCategories = [...new Set(posts.flatMap(post => post.categories))];
   const categories = [...staticCategories, ...postCategories];
 

@@ -47,26 +47,17 @@ async function loadRelatedPosts() {
 
 
   relatedPosts.forEach(post => {
-    const postElement = document.createElement('a');
-    postElement.classList.add('post-card');
-    postElement.href = `post.html?id=${post.id}`;
+    const newPost = document.createElement('post-card')
 
-    const categoriesHTML = post.categories.map(category => {
-      return /*html*/`
-        <a href="../index.html?category=${encodeURIComponent(category)}" class="category-btn">${category}</a>
-      `;
-    }).join('');
+    newPost.setAttribute('href', `post.html?id=${post.id}`)
+    newPost.setAttribute('cover', post.cover)
+    newPost.setAttribute('title', post.title)
+    newPost.setAttribute('categories', JSON.stringify(post.categories))
+    newPost.setAttribute('excerpt', post.excerpt)
+    newPost.setAttribute('views', post.views)
 
-    postElement.innerHTML = /*html*/`
-      <img src=${post.cover} alt="${post.title}">
-      <div class="card-content">
-        <div class="row">${categoriesHTML}</div>
-        <h3>${post.title}</h3>
-        <p>${post.excerpt}</p>
-      </div>
-    `;
-    postsContainer.appendChild(postElement);
-    responsivePostsContainer.appendChild(postElement.cloneNode(true));
+    postsContainer.appendChild(newPost);
+    responsivePostsContainer.appendChild(newPost.cloneNode(true));
   });
 
 }
