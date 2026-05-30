@@ -71,7 +71,7 @@ async function loadSuggestedProducts(category, id) {
     card.setAttribute('price', product.price);
     card.setAttribute('category', product.category);
     card.setAttribute('image', `.${product.images.main}`);
-    card.setAttribute('href', `/pages/product.html?id=${product.id}`);
+    card.setAttribute('href', `./product.html?id=${product.id}`);
 
     productContainer.appendChild(card);
 
