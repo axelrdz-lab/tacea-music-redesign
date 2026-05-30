@@ -4,6 +4,7 @@
   --steel: #66727C;
   --trueorange: #EE3C0C;
   --hueso: #E6E4D5;
+  --hueso-hover: #BAB8A5;
   --light: #fff;
   --dark: #242323;
   /* opac colors */
@@ -15,8 +16,9 @@
   --light-opac: rgba(255, 255, 255, 0.8);
   --dark-opac: rgba(36, 35, 35, 0.6);
   --dark-40: rgba(36, 35, 35, 0.4);
+  --dark-20: rgba(36, 35, 35, 0.12);
   /* gradientes */
-  --gradient-hueso-steel: linear-gradient(to left, var(--hueso-opac), var(--steel-opac));
+  --gradient-hueso-steel: linear-gradient(to top, var(--hueso-opac), var(--steel-opac));
   --radial-gradient-hueso-steel: radial-gradient(15% 50% at 19.3% 50.14%, var(--hueso-opac) 0%, var(--steel-opac) 100%);
   --radial-center-gradient: radial-gradient(50% 50% at center, var(--hueso-opac) 0%, var(--steel-opac) 100%);
 }
@@ -32,6 +34,7 @@
   background: var(--trueorange);
 }
 body {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -54,6 +57,7 @@ svg {
   width: 2em;
   height: auto;
   color: var(--dark);
+  transition: all 0.3s ease;
 }
 /* global text styles */
 h1 {
@@ -76,9 +80,13 @@ h3 {
   transition: all 0.3s ease;
 }
 p {
+  font-family: "Figtree", sans-serif;
   margin: 0;
-  font-weight: 300;
-  font-size: 14px;
+  font-weight: 500;
+  font-size: 16px;
+}
+button {
+  font-family: "Unbounded", sans-serif;
 }
 .bold {
   font-weight: 500 !important;
@@ -116,6 +124,9 @@ p {
   width: 2px;
   height: 100%;
   background-color: var(--dark);
+}
+.section .horizontal-div {
+  flex: 1;
 }
 .carousel-row {
   display: flex;
@@ -199,6 +210,64 @@ header .bottom-navbar {
   height: 1.5em;
   background-color: var(--hueso);
 }
+/* drawer (mobile navbar) */
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: space-between !important;
+  
+  width: 80%;
+  height: 100vh;
+  padding: 2em;
+  padding-bottom: 4em;
+  
+  background-color: var(--hueso);
+  filter: drop-shadow(0em 1em 15px var(--dark-20));
+
+  z-index: 200;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+.drawer.open {
+  transform: translateX(0);
+}
+.drawer ul a {
+  color: var(--dark);
+  font-size: 1em;
+  display: block;
+  transition: color 0.2s ease;
+}
+.drawer ul a:hover {
+  color: var(--trueorange);
+}
+.drawer-divider {
+  width: 100%;
+  height: 2px;
+  background-color: var(--dark-40);
+}
+.drawer-header {
+  width: 100%;
+  justify-content: space-between;
+}
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  
+  background-color: var(--dark-40);
+  opacity: 0;
+
+  z-index: 199;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.drawer-overlay .open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+
+
 
 /* FOOTER */
 footer {
@@ -227,8 +296,6 @@ footer {
 .footer-column p {
   margin: 0;
   text-align: left;
-  font-size: 14px;
-  font-weight: 300;
 }
 .footer-column a {
   font-size: 14px;
@@ -275,7 +342,8 @@ footer {
 }
 
 /* buttons */
-.btn-primary {
+.btn-primary,
+.btn-secondary {
   height: 2.6em;
   position: relative;
   overflow: hidden;
@@ -284,31 +352,44 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 0.5em;
-  padding: 0.4em 0.7em;
+  padding: 0.4em 0.8em;
 
-  background-color: var(--hueso);
   border: 2px solid var(--dark);
   border-radius: 5px;
   
   font-size: 18px;
   cursor: pointer;
 }
-.btn-primary svg {
+.btn-primary {
+  background-color: var(--dark);
+  transition: all 0.2s ease;
+}
+.btn-secondary {
+  background-color: var(--hueso);
+  transition: all 0.2s ease;
+}
+.btn-primary svg,
+.btn-secondary svg {
   height: 1.6em;
 }
 .btn-primary span, 
-.btn-primary svg {
+.btn-primary svg,
+.btn-secondary span, 
+.btn-secondary svg {
   position: relative;
   z-index: 1;
   color: var(--dark);
   transition: color 0.2s ease;
+}
+.btn-primary span, .btn-primary svg {
+  color: var(--hueso);
 }
 
 .btn-primary:hover span, 
 .btn-primary:hover svg {
   color: var(--light);
 }
-.btn-primary::before {
+/*.btn-primary::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0;
@@ -318,17 +399,20 @@ footer {
 }
 .btn-primary:hover::before {
   height: 100%;
+}*/
+.btn-primary:hover {
+  background-color: var(--trueorange) !important;
 }
-.btn-secondary {
-  background-color: var(--hueso);
-  font-family: inherit;
-  border: 0px;
-  color: var(--dark);
-  padding: 0.4em 0.8em;
-  border-radius: 5px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.btn-secondary:hover {
+  background-color: var(--hueso-hover);
+}
+.btn-primary:hover span, 
+.btn-primary:hover svg {
+  color: var(--light);
+}
+.btn-primary:active, 
+.btn-secondary:active {
+  scale: 0.98;
 }
 .category-btn {
   background-color: var(--steel-40);
@@ -358,7 +442,7 @@ footer {
   color: var(--hueso) !important;
 }
 .btn-outline {
-  background-color: transparent;
+  background-color: var(--hueso);
   border: 2px solid var(--dark);
   color: var(--dark);
   padding: 0.4em 0.8em;
@@ -375,17 +459,30 @@ footer {
   width: 2.3em;
 }
 .btn-icon {
+  display: flex;
+  align-items: center;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0;
+  padding: 0.4em;
+  border-radius: 5px;
   transition: all 0.3s ease;
 }
-.btn-icon svg:hover {
-  color: var(--trueorange);
-  scale: 1.1;
+.btn-icon:active {
+  scale: 0.98;
+  & .hover-icon {
+    display: block;
+  }
+  & .default-icon {
+    display: none;
+  }
 }
-
+.btn-icon:hover {
+  background-color: var(--dark-20);
+}
+.btn-icon .hover-icon {
+  display: none;
+}
 /* cards */
 product-card {
   position: relative;
@@ -396,17 +493,17 @@ product-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1em 2em;
+  padding: 1em 1.2em;
   gap: 0.2em;
-  width: 16em;
+  width: 14em;
   flex-shrink: 0;
   transition: all 0.3s ease;
 }
 product-card img {
   width: 100%;
-  height: 12em;
+  height: 10em;
   object-fit: contain;
-  padding-bottom: 1em;
+  padding-bottom: 0.6em;
 }
 product-card h3 {
   display: -webkit-box;
@@ -417,22 +514,26 @@ product-card h3 {
   min-height: 2.5em;
   margin: 0;
   text-align: center;
-  font-size: 1em;
+  font-size: 16px;
   font-weight: 500;
 }
 product-card p {
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 500;
   margin: 0;
   margin-right: 0.5em;
-
 }
 product-card .row {
   margin-top: 0.4em;
-  gap: 0.5em;
+  gap: 0.2em;
 }
 product-card:hover {
-  background: var(--steel-20);
+  background: var(--dark-20);
   transform: scale(1.02);
+}
+product-card:active {
+  background: var(--steel-40);
+  transform: scale(0.98);
 }
 .product-category {
   color: var(--dark);
@@ -465,6 +566,7 @@ review-card .row img {
   height: 2em;
   border-radius: 5px;
   object-fit: cover;
+  margin-bottom: 0.6em;
 }
 review-card .column {
   gap: 0;
@@ -493,12 +595,15 @@ review-card .card-content {
   justify-content: start;
 
   padding: 1em 1.5em;
-  gap: 0.5em;
+  gap: 0.2em;
 
   color: var(--dark);
 }
 post-card .card-content {
   border-left: 2px solid var(--dark);
+}
+post-card .card-content p {
+  margin-top: 0.6em;
 }
 post-card .card-content p,
 review-card .card-content p {
@@ -526,17 +631,24 @@ review-card:hover {
   background: var(--steel-20);
   transform: scale(1.02);
 }
+post-card:active,
+review-card:active {
+  background: var(--dark-20);
+  transform: scale(0.98);
+}
 post-card .row,  /* row con las categorias del post */
 review-card .row {  /* row con la fecha y autor de la review */
   gap: 0.5em;
 }
 post-card .views {
   position: absolute;
+  display: flex;
+  align-items: center;
   top: 0.5em;
   left: 0.5em;
 }
 post-card .views svg {
-  width: 1em;
+  width: 1.2em;
   height: auto;
 }
 post-card .views p {
@@ -556,6 +668,9 @@ post-card .views p {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
+  h2 {
+    font-size: 2.2em;
+  }
 }
 @media (max-width: 896px) {
   .top-navbar .logo {
@@ -569,6 +684,12 @@ post-card .views p {
   }
   .bottom-navbar {
     display: none;
+  }
+  footer {
+    padding: 3em 4em;
+  }
+  .section { 
+    padding: 3em 4em;
   }
 }
 @media (max-width: 768px) {
@@ -672,7 +793,7 @@ post-card .views p {
 }
 @media (max-width: 512px) {
   .header-logo {
-    width: 100px;
+    width: 90px;
   }
   h1 {
     font-size: 2.5em;
@@ -682,6 +803,12 @@ post-card .views p {
   }
   h3 {
     font-size: 0.9em;
+  }
+  .btn-search svg {
+    width: 2.1em;
+  }
+  svg {
+    width: 1.8em;
   }
 }
 @media (max-width: 448px) {

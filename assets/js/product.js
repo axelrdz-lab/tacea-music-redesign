@@ -34,15 +34,19 @@ async function loadProductDetails() {
   const addImgsContainer = document.getElementById('product-aditional-imgs');
   const additionalImages = product.images.gallery
 
+  let counter = 0
   additionalImages.forEach(image => {
     const img = document.createElement('img');
     img.src = '.' + product.images.main
+    if(counter === 0) img.classList.add('active')
+    counter++
     addImgsContainer.appendChild(img);
   });
 
   
   await loadSuggestedProducts(product.category, product.id);
   await loadReviews(product.id);
+  setupProductQuantity();
 
 }
 
@@ -97,6 +101,30 @@ async function loadReviews(productId) {
     container.appendChild(reviewElement)
   })
 
+}
+
+let currentQuantity = 1;
+async function setupProductQuantity() {
+
+  const quantityContainer = document.querySelector('.product-quantity');
+  const quantitySpan = document.getElementById('product-quantity-value');
+
+  quantityContainer.addEventListener('click', (event) => {
+    
+    const button = event.target.closest('button');
+    if (!button) return;
+
+    const action = button.dataset.action;
+    if (action === 'increase') {
+      currentQuantity++;
+    } else if (action === 'decrease') {
+      if (currentQuantity > 1) {
+        currentQuantity--;
+      }
+    }
+    quantitySpan.textContent = currentQuantity;
+  });
+  
 }
 
 loadProductDetails();

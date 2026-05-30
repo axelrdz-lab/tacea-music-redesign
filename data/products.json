@@ -117,13 +117,35 @@
     "category": "guitarras",
     "price": 36710,
     "discount": 0,
-    "description": "Esta agresiva guitarra cuenta con un cuerpo de tilo con una tapa de fresno arenado acabado en negro con binding blanco para un aspecto angustiado y amenazante. La construcción del mástil de arce a través del cuerpo crea un mayor sustain e incluye un refuerzo de grafito para la máxima estabilidad contra los rigores y estragos de la carretera. Diseñado para la velocidad, su diapasón de ébano de radio compuesto de 12«-16» alberga 24 trastes jumbo y elegantes incrustaciones de aleta de tiburón perladas.",
+    "description": "Esta agresiva guitarra cuenta con un cuerpo de tilo con una tapa de fresno arenado acabado en negro con binding blanco para un aspecto angustiado y amenazante. La construcción del mástil de arce a través del cuerpo crea un mayor sustain e incluye un refuerzo de grafito para la máxima estabilidad contra los rigores y estragos de la carretera.",
     "specs": {
       "marca": "Jackson",
       "modelo": "Pro Series"
     },
     "images": {
       "main": "./assets/img/products/guitarra-electrica-pro-series-signature-jeff-loomis-kelly-ash.png",
+      "gallery": [
+        "./assets/img/products/guitarra-electrica-pro-series-signature-jeff-loomis-kelly-ash-2.png",
+        "./assets/img/products/guitarra-electrica-pro-series-signature-jeff-loomis-kelly-ash-3.png",
+        "./assets/img/products/guitarra-electrica-pro-series-signature-jeff-loomis-kelly-ash-4.png"
+      ]
+    },
+    "featured": true,
+    "stock": 3
+  },
+    {
+    "id": 7,
+    "name": "Bateria Electrica Medeli Mz923",
+    "category": "baterias",
+    "price": 36710,
+    "discount": 0,
+    "description": "La Medeli MZ923 es una batería electrónica premium diseñada para bateristas que buscan una experiencia extremadamente cercana a una batería acústica real, combinando estética profesional, tecnología avanzada y una respuesta altamente dinámica.",
+    "specs": {
+      "marca": "Medeli",
+      "modelo": "Mz923"
+    },
+    "images": {
+      "main": "./assets/img/products/bateria-electrica-medeli-mz923.png",
       "gallery": [
         "./assets/img/products/guitarra-electrica-pro-series-signature-jeff-loomis-kelly-ash-2.png",
         "./assets/img/products/guitarra-electrica-pro-series-signature-jeff-loomis-kelly-ash-3.png",

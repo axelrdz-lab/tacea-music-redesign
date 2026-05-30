@@ -21,7 +21,7 @@ class ReviewCard extends HTMLElement {
           <img src="../assets/img/user.jpeg" alt="">
           <div class="column">
             <span>${author}</span>
-            <span class="date">${formattedDate}</span>
+            <p class="date">${formattedDate}</p>
           </div>
         </div>
         <h3>${title}</h3>

@@ -1,60 +1,60 @@
 [
   {
-    "id": "1",
+    "id": "guitarras",
     "name": "Guitarras",
     "image": "./assets/img/categories/cat_guitarra.png",
     "url": "./pages/tienda.html?categoria=guitarras"
   },
   {
-    "id": "2",
+    "id": "teclados",
     "name": "Teclados",
     "image": "./assets/img/categories/cat_teclado.png",
     "url": "./pages/tienda.html?categoria=teclados"
   },
   {
-    "id": "3",
+    "id": "ukeleles",
     "name": "Ukeleles",
     "image": "./assets/img/categories/cat_ukelele.png",
     "url": "./pages/tienda.html?categoria=ukeleles"
   },
   {
-    "id": "4",
+    "id": "baterias",
     "name": "Baterías",
     "image": "./assets/img/categories/cat_bateria.png",
     "url": "./pages/tienda.html?categoria=baterias"
   },
   {
-    "id": "5",
+    "id": "accesorios",
     "name": "Accesorios",
     "image": "./assets/img/categories/cat_accesorios.png",
     "url": "./pages/tienda.html?categoria=accesorios"
   },
   {
-    "id": "6",
+    "id": "bocinas",
     "name": "Bocinas",
     "image": "./assets/img/categories/cat_bocina.png",
     "url": "./pages/tienda.html?categoria=bocinas"
   },
   {
-    "id": "7",
+    "id": "microfonos",
     "name": "Micrófonos",
     "image": "./assets/img/categories/cat_microfono.png",
     "url": "./pages/tienda.html?categoria=microfonos"
   },
   {
-    "id": "8",
+    "id": "acordeones",
     "name": "Acordeones",
     "image": "./assets/img/categories/cat_acordeon.png",
     "url": "./pages/tienda.html?categoria=acordeones"
   },
   {
-    "id": "9",
+    "id": "iluminacion",
     "name": "Iluminación",
     "image": "./assets/img/categories/cat_laser.png",
     "url": "./pages/tienda.html?categoria=iluminacion"
   },
   {
-    "id": "10",
+    "id": "bajos",
     "name": "Bajos",
     "image": "./assets/img/categories/cat_bajo.png",
     "url": "./pages/tienda.html?categoria=bajos"

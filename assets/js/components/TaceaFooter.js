@@ -43,7 +43,7 @@ class TaceaFooter extends HTMLElement {
             <p>Obten ofertas especiales y enterate de los productos nuevos directamente en tu correo electrónico.</p>
             <form class="newsletter-form">
               <input type="email" placeholder="Ingresa tu correo" required>
-              <button class="btn-secondary" type="submit">Suscribirse</button>
+              <button class="btn-outline" type="submit">Suscribirse</button>
             </form>
           </div>
         </div>

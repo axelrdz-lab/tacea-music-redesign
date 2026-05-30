@@ -14,8 +14,8 @@ async function loadPostContent() {
   const categoryContainer = document.getElementById('post-categories');
   post.categories.forEach(category => {
     const categoryBadge = document.createElement('a');
-    categoryBadge.className = 'category-btn';
-    categoryBadge.textContent = category;
+    categoryBadge.className = 'product-category';
+    categoryBadge.textContent = `#${category}`;
     categoryBadge.href = `../index.html?category=${encodeURIComponent(category)}`;
     categoryContainer.appendChild(categoryBadge);
   });

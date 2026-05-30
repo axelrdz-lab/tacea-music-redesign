@@ -23,7 +23,7 @@ async function loadFeaturedPosts() {
         <h3>${post.title}</h3>
         <p>${post.excerpt}</p>  
       </div>
-      <p class="pill-badge">${post.date}</p>
+      <span class="pill-badge">${post.date}</span>
     `;
   });
 

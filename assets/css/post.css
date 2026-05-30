@@ -9,6 +9,9 @@
 .post-header {
   gap: 1.25em;
 }
+.post-header .column {
+  gap: 0.2em;
+}
 .post-data-row {
   gap: 1.5em;
 }
@@ -41,7 +44,7 @@
   transition: all 0.3s ease;
 }
 
-#related-posts .post-card {
+#related-posts post-card {
   min-width: 40em;
 }
 #related-posts-column {

@@ -1,45 +1,84 @@
 .product-details {
   flex-direction: row;
+  align-items: stretch;
   gap: auto;
 }
 
 .product-images {
+  position: relative;
   flex-grow: 1;
+  max-height: 30em;
   gap: 4em;
   transition: all 0.3s ease;
 }
 .product-images .main-image {
   width: 100%;
+  height: 30em;
 }
 #product-img {
   width: 100%;
-  height: 30em;
+  height: 100%;
   object-fit: contain;
 }
+#product-aditional-imgs {
+  position: absolute;
+  bottom: -1.5em;
+  gap: 0.6em;
+}
 #product-aditional-imgs img {
-  width: 6em;
-  height: 6em;
+  width: 7em;
+  height: 7em;
   object-fit: cover;
+
+  background-color: var(--hueso) !important;
+  backdrop-filter: blur(15px);
+  border: 2px solid var(--dark);
+  border-radius: 5px;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#product-aditional-imgs img:hover {
+  background-color: var(--steel-40) !important;
+  scale: 1.02;
+}
+#product-aditional-imgs img:active {
+  background-color: var(--dark-40) !important;
+  scale: 0.98;
+}
+#product-aditional-imgs .active {
+  background-color: var(--dark-40) !important;
 }
 
 .product-overview {
   height: 100%;
   width: 40em;
+
   color: var(--dark);
   border: 2px solid var(--dark);
-
   border-radius: 5px;
-  padding: 2em 3em;
+
+  padding: 2em 2.5em;
   gap: 1.5em;
 }
 .product-overview .header {
   align-items: flex-start;
+  justify-content: space-between;
 }
 .product-overview .header .other-actions {
-  gap: 1em;
+  gap: 0.2em;
+}
+.product-overview #product-category {
+  width: fit-content !important;
 }
 .product-overview .column {
-  gap: 0.5em;
+  gap: 0.2em;
+}
+.product-overview .column .row {
+  justify-content: space-between;
+}
+.product-overview .main-actions {
+  gap: 0.6em;
 }
 .product-overview .bold {
   font-size: 1em;
@@ -73,11 +112,10 @@
   transition: all 0.3s ease;
 }
 .product-overview .product-quantity button:hover  {
-  color: var(--light);
-  background-color: var(--trueorange);
-  & svg {
-    color: var(--hueso);
-  }
+  background-color: var(--dark-20);
+}
+.product-overview .product-quantity button:active  {
+  background-color: var(--dark-40);
 }
 #product-buy-btn {
   background-color: var(--dark);
@@ -91,7 +129,7 @@
   padding: 1em;
   border-radius: 5px;
   width: 100%;
-  background-color: var(--steel-40);
+  background-color: var(--dark-20);
   color: var(--dark);
   display: none;
 }
@@ -103,13 +141,8 @@
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 1280px) {
-  .product-details {
-    gap: 12em;
-  }
-  .product-images {
-    height: 100% !important;
-    flex-direction: column-reverse;
-    gap: 1em;
+  .product-overview {
+    width: 32em;
   }
   #product-img {
     width: 100%;
@@ -128,7 +161,7 @@
 @media (max-width: 1152px) {
   .product-details {
     flex-direction: column;
-    gap: 2em;
+    gap: 4em;
   }
   .product-images {
     flex-direction: row;
@@ -136,10 +169,7 @@
   }
   #product-img {
     width: 100%;
-    height: 20em;
-  }
-  #product-aditional-imgs {
-    flex-direction: column;
+    height: 30em;
   }
   .product-overview {
     width: 100%;
@@ -148,5 +178,9 @@
 @media (max-width: 672px) {
   .product-overview {
     padding: 1em;
+  }
+  #product-aditional-imgs img {
+    width: 6em;
+    height: 6em;
   }
 }

@@ -12,7 +12,7 @@ class TaceaNavbar extends HTMLElement {
         <div class="row top-navbar">
           <div class="row logo">
             <!-- hamburger menu -->
-            <button class="hamburger-btn">
+            <button class="hamburger-btn btn-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"></path>
               </svg>
@@ -25,9 +25,10 @@ class TaceaNavbar extends HTMLElement {
           <!-- links -->
           <nav class="navbar-links">
             <ul>
-              <li><a class="btn-outline" href="${base}/index.html">INICIO</a></li>
-              <li><a class="btn-outline" href="${base}/pages/blog.html">BLOG</a></li>
-              <li><a class="btn-outline" href="${base}/pages/contacto.html">CONTÁCTANOS</a></li>
+              <li><a class="btn-outline" href="${base}/index.html">Inicio</a></li>
+              <li><a class="btn-outline" href="${base}/pages/blog.html">Blog</a></li>
+              <li><a class="btn-outline" href="${base}/pages/contacto.html">Sobre nosotros</a></li>
+              <li><a class="btn-outline" href="${base}/pages/contacto.html">Contacto</a></li>
             </ul>
           </nav>
           <!-- other actions -->
@@ -54,16 +55,69 @@ class TaceaNavbar extends HTMLElement {
         </div>
         <!-- bottom links -->
         <div class="row bottom-navbar">
-          <a href="#"><span>Guitarras</span></a>
-          <a href="#"><span>Bajos</span></a>
-          <a href="#"><span>Teclados</span></a>
-          <a href="#"><span>Baterías</span></a>
+          <a href="${base}/pages/catalog.html?category=guitarras"><span>Guitarras</span></a>
+          <a href="${base}/pages/catalog.html?category=bajos"><span>Bajos</span></a>
+          <a href="${base}/pages/catalog.html?category=teclados"><span>Teclados</span></a>
+          <a href="${base}/pages/catalog.html?category=baterias"><span>Baterías</span></a>
           <div class="vertical-div"></div>
-          <a href="#"><span>Más vendidos</span></a>
-          <a href="#"><span>Ofertas</span></a>
+          <a href="${base}/pages/catalog.html?category=mas-vendidos"><span>Más vendidos</span></a>
+          <a href="${base}/pages/catalog.html?category=ofertas"><span>Ofertas</span></a>
         </div>
       </header>
+
+      <!-- responsive navbar: DRAWER-->
+      <div class="drawer-overlay" id="drawer-overlay"></div>
+      <nav class="drawer column" id="drawer">
+        <div class="drawer-header row">
+            <a href="${base}/index.html">
+              <img class="header-logo" src="${base}/assets/img/logo_tacea.png" alt="logo Tacea Music">
+            </a>
+            <button class="drawer-close btn-icon" id="drawer-close">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z"></path>
+            </svg>
+          </button>
+        </div>
+        <ul class="column">
+          <li><a href="${base}/index.html">Inicio</a></li>
+          <li><a href="${base}/pages/blog.html">Blog</a></li>
+          <li><a href="${base}/pages/contacto.html">Sobre nosotros</a></li>
+          <li><a href="${base}/pages/contacto.html">Contacto</a></li>
+        </ul>
+        <div class="drawer-divider"></div>
+        <ul class="column">
+          <li><a href="${base}/pages/catalog.html?category=guitarras">Guitarras</a></li>
+          <li><a href="${base}/pages/catalog.html?category=bajos">Bajos</a></li>
+          <li><a href="${base}/pages/catalog.html?category=teclados">Teclados</a></li>
+          <li><a href="${base}/pages/catalog.html?category=baterias">Baterías</a></li>
+          <li><a href="${base}/pages/catalog.html?category=mas-vendidos">Más vendidos</a></li>
+          <li><a href="${base}/pages/catalog.html?category=ofertas">Ofertas</a></li>
+        </ul>
+      </nav>
     `;
+
+    /* overlay references */
+    const hamburgerBtn = this.querySelector('.hamburger-btn');
+    const drawerClose = this.querySelector('#drawer-close');
+    const drawer = this.querySelector('#drawer');
+    const overlay = this.querySelector('#drawer-overlay');
+
+    const openDrawer = () => {
+      drawer.classList.add('open');
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeDrawer = () => {
+      drawer.classList.remove('open');
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    };
+
+    hamburgerBtn.addEventListener('click', openDrawer);
+    drawerClose.addEventListener('click', closeDrawer);
+    overlay.addEventListener('click', closeDrawer);
+
   }
   
 }

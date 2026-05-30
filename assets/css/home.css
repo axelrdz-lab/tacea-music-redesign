@@ -65,13 +65,6 @@
 }
 .special-offers .row h2 {
   color: var(--dark);
-  text-align: center;
-}
-.special-offers .horizontal-div {
-  flex: 1;
-}
-.special-offers .horizontal-div {
-  background-color: var(--dark);
 }
 
 /* category selector header */
@@ -82,7 +75,7 @@
   text-align: left;
   margin-bottom: 2em;
 }
-.category-selector .row h2 {
+.category-selector .row {
   width: 100%;
 }
 .category-selector .carousel-row::-webkit-scrollbar {
@@ -113,7 +106,7 @@
   border-radius: 5px;
   transition: all 0.3s ease;
 }
-.category-selector .carousel-row .cat p {
+.category-selector .carousel-row .cat span {
   position: absolute;
   right: 0;
   bottom: 1em;

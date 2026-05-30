@@ -8,10 +8,10 @@ async function loadCategories() {
   categories.forEach(category => {
     const catDiv = document.createElement('a');
     catDiv.classList.add('cat');
-    catDiv.href = `product-list.html?category=${category.id}`;
+    catDiv.href = `./pages/catalog.html?category=${category.id}`;
     catDiv.innerHTML = /*html*/`
       <img src="${category.image}" alt="${category.name}">
-      <p class="pill-badge">${category.name}</p>
+      <span class="pill-badge">${category.name}</span>
     `;
     carousel.appendChild(catDiv);
   });
@@ -51,7 +51,7 @@ async function loadGetTheirStyleFeaturedProduct() {
     currency: 'MXN'
   })
   document.getElementById('featured-product-price').textContent = productPrice
-  document.getElementById('featured-product-link').href = `/pages/product.html?id=${featuredProduct.id}`
+  document.getElementById('featured-product-link').href = `./pages/product.html?id=${featuredProduct.id}`
   
 }
 
