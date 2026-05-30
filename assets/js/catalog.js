@@ -14,7 +14,7 @@ async function loadProducts() {
     element.setAttribute('category', product.category)
     element.setAttribute('name', product.name)
     element.setAttribute('price', product.price)
-    element.setAttribute('href', `/pages/product.html?id=${product.id}`);
+    element.setAttribute('href', `./product.html?id=${product.id}`);
 
     gridContainer.appendChild(element)
     

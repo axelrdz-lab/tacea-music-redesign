@@ -33,7 +33,7 @@ async function loadSpecialOffers() {
     productCard.setAttribute('price', product.price);
     productCard.setAttribute('category', product.category);
     productCard.setAttribute('image', product.images.main);
-    productCard.setAttribute('href', `/pages/product.html?id=${product.id}`);
+    productCard.setAttribute('href', `./pages/product.html?id=${product.id}`);
 
     carousel.appendChild(productCard);
   });
