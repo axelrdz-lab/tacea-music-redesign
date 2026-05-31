@@ -13,8 +13,9 @@ async function loadProductDetails() {
   
   // access to the path correctly 
   document.getElementById('product-img').src = '.' + product.images.main 
-
-  document.getElementById('product-category').textContent = product.category
+  const productCategory = document.getElementById('product-category')
+  productCategory.textContent = product.category
+  productCategory.href = `./catalog.html?category=${product.category}`
   document.getElementById('product-name').textContent = product.name
   document.getElementById('product-description').textContent = product.description
 
