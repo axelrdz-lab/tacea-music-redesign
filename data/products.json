@@ -8,7 +8,7 @@
     "discount": 5,
     "description": "El Bajo Eléctrico Tagima 5 Cuerdas Pasivo TW Series Negro es la elección perfecta para músicos que buscan un instrumento de calidad y versatilidad. Con un acabado brillante en un elegante color negro, este bajo destaca no solo por su estética, sino también por su construcción sólida y su diseño ergonómico.",
     "specs": {
-      "marca": "McCartney",
+      "brand": "McCartney",
       "tipo": "Bajo eléctrico"
     },
     "images": {
@@ -30,7 +30,7 @@
     "discount": 15,
     "description": "Mezcladora digital de 16 canales con pantalla táctil y efectos integrados.",
     "specs": {
-      "marca": "QSC",
+      "brand": "QSC",
       "modelo": "TouchMix-16",
       "canales": 16
     },
@@ -74,7 +74,7 @@
     "discount": 20,
     "description": "Sousafón profesional de la marca Jupiter, ideal para bandas de marcha.",
     "specs": {
-      "marca": "Jupiter",
+      "brand": "Jupiter",
       "tipo": "Sousafón"
     },
     "images": {
@@ -96,7 +96,7 @@
     "discount": 40,
     "description": "Piano digital portátil de 61 teclas con sonido de cola de concierto Yamaha.",
     "specs": {
-      "marca": "Yamaha",
+      "brand": "Yamaha",
       "modelo": "NP12B",
       "teclas": 61
     },
@@ -119,7 +119,7 @@
     "discount": 0,
     "description": "Esta agresiva guitarra cuenta con un cuerpo de tilo con una tapa de fresno arenado acabado en negro con binding blanco para un aspecto angustiado y amenazante. La construcción del mástil de arce a través del cuerpo crea un mayor sustain e incluye un refuerzo de grafito para la máxima estabilidad contra los rigores y estragos de la carretera.",
     "specs": {
-      "marca": "Jackson",
+      "brand": "Jackson",
       "modelo": "Pro Series"
     },
     "images": {
@@ -138,10 +138,10 @@
     "name": "Bateria Electrica Medeli Mz923",
     "category": "baterias",
     "price": 36710,
-    "discount": 0,
+    "discount": 20,
     "description": "La Medeli MZ923 es una batería electrónica premium diseñada para bateristas que buscan una experiencia extremadamente cercana a una batería acústica real, combinando estética profesional, tecnología avanzada y una respuesta altamente dinámica.",
     "specs": {
-      "marca": "Medeli",
+      "brand": "Medeli",
       "modelo": "Mz923"
     },
     "images": {

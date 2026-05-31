@@ -124,15 +124,6 @@
   color: var(--hueso);
 }
 
-#product-reviews-is-empty {
-  margin: 0;
-  padding: 1em;
-  border-radius: 5px;
-  width: 100%;
-  background-color: var(--dark-20);
-  color: var(--dark);
-  display: none;
-}
 #product-reviews {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

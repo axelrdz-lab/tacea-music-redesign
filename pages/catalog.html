@@ -17,6 +17,7 @@
     <script src="../assets/js/components/TaceaNavbar.js"></script>
     <script src="../assets/js/components/TaceaFooter.js"></script>
     <script src="../assets/js/components/ProductCard.js"></script>
+    <script src="../assets/js/components/TaceaDropdown.js"></script>
 
     <title>Tacea Music | List</title>
 
@@ -27,28 +28,22 @@
     <tacea-navbar></tacea-navbar>
 
     <section class="section catalog">
-      <div class="column filters">
-        <div class="row">
-          <span>Categorias</span>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path>
-          </svg>
+      <div class="row filters" id="filters">
+        <div class="row filter-container">
+          <tacea-dropdown id="category-filter" text="Categorías"></tacea-dropdown>
+          <tacea-dropdown id="brand-filter" text="Marcas"></tacea-dropdown>
+          <tacea-dropdown id="price-filter" text="Precios"></tacea-dropdown>
         </div>
-        <div class="row">
-          <span>Marca</span>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path>
-          </svg>
-        </div>
-        <div class="row">
-          <span>Precio</span>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path>
-          </svg>
+        <div class="row order-container">
+          <tacea-dropdown id="order-controller" text="Orden"></tacea-dropdown>
+          <button class="btn-icon" id="reset-filters-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M6.92893 0.514648L21.0711 14.6568L19.6569 16.071L15.834 12.2486L15 13.4999V21.9999H9V13.4999L4 5.99993H3V3.99993L7.585 3.99965L5.51472 1.92886L6.92893 0.514648ZM9.585 5.99965L6.4037 5.99993L11 12.8944V19.9999H13V12.8944L14.392 10.8066L9.585 5.99965ZM21 3.99993V5.99993H20L18.085 8.87193L16.643 7.42893L17.5963 5.99993H15.213L13.213 3.99993H21Z"></path>
+            </svg>
+          </button>
         </div>
       </div>
       <div class="catalog-grid">
-
       </div>
     </section>
     

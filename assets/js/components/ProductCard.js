@@ -13,9 +13,12 @@ class ProductCard extends HTMLElement {
       currency: 'MXN'
     });
 
+    const isRoot = !window.location.pathname.includes('/pages/');
+    const base = isRoot ? '.' : '..';
+
     this.innerHTML = /*html*/`
       <img src="${image}" alt="${name}">
-      <a class="product-category" href="product-list.html?category=${category}">${category}</a>
+      <a class="product-category" href="${base}/pages/catalog.html?category=${category}">${category}</a>
       <h3>${name}</h3>
       <div class="row">
         <p>${formattedPrice}</p>

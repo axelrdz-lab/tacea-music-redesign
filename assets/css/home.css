@@ -173,7 +173,7 @@
   gap: 0.6em;
 }
 .get-their-style .text-container .btn-primary {
-  height: 100%;
+  max-height: 10em;
 }
 
 /* RESPONSIVE DESIGN */

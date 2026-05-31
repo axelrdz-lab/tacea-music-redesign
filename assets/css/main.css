@@ -14,9 +14,10 @@
   --steel-20: rgba(102, 114, 124, 0.2);
   --hueso-opac: rgba(230, 228, 213, 0.8);
   --light-opac: rgba(255, 255, 255, 0.8);
-  --dark-opac: rgba(36, 35, 35, 0.6);
+  --dark-60: rgba(36, 35, 35, 0.6);
   --dark-40: rgba(36, 35, 35, 0.4);
-  --dark-20: rgba(36, 35, 35, 0.12);
+  --dark-20: rgba(36, 35, 35, 0.15);
+  --dark-10: rgba(36, 35, 35, 0.1);
   /* gradientes */
   --gradient-hueso-steel: linear-gradient(to top, var(--hueso-opac), var(--steel-opac));
   --radial-gradient-hueso-steel: radial-gradient(15% 50% at 19.3% 50.14%, var(--hueso-opac) 0%, var(--steel-opac) 100%);
@@ -87,6 +88,10 @@ p {
 }
 button {
   font-family: "Unbounded", sans-serif;
+}
+button span,
+.btn-primary, .btn-secondary {
+  font-size: 16px !important;
 }
 .bold {
   font-weight: 500 !important;
@@ -169,7 +174,8 @@ header .top-navbar {
   transition: all 0.3s ease;
 }
 .header-logo {
-  width: 120px;
+  width: 100px;
+  transition: all 0.3 ease;
 }
 .top-navbar .navbar-links {
   width: 100%;
@@ -215,12 +221,10 @@ header .bottom-navbar {
   position: fixed;
   top: 0;
   left: 0;
-  justify-content: space-between !important;
   
   width: 80%;
   height: 100vh;
   padding: 2em;
-  padding-bottom: 4em;
   
   background-color: var(--hueso);
   filter: drop-shadow(0em 1em 15px var(--dark-20));
@@ -245,10 +249,12 @@ header .bottom-navbar {
   width: 100%;
   height: 2px;
   background-color: var(--dark-40);
+  margin: 1em 0;
 }
 .drawer-header {
   width: 100%;
   justify-content: space-between;
+  padding-bottom: 2em;
 }
 .drawer-overlay {
   position: fixed;
@@ -261,7 +267,7 @@ header .bottom-navbar {
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
-.drawer-overlay .open {
+.drawer-overlay.open {
   opacity: 1;
   pointer-events: all;
 }
@@ -389,17 +395,6 @@ footer {
 .btn-primary:hover svg {
   color: var(--light);
 }
-/*.btn-primary::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 0%; width: 100%;
-  background-color: var(--trueorange);
-  transition: all 0.2s ease;
-}
-.btn-primary:hover::before {
-  height: 100%;
-}*/
 .btn-primary:hover {
   background-color: var(--trueorange) !important;
 }
@@ -483,6 +478,124 @@ footer {
 .btn-icon .hover-icon {
   display: none;
 }
+.search-container {
+  position: relative;
+  height: 100%;
+  transition: all 0.3 ease;
+}
+.search-container.open {
+  border-bottom: 2px solid var(--dark);
+  & input[type="text"] {
+    width: 15em;
+    opacity: 1;
+    padding: 0.4em;
+  }
+}
+input[type="text"] {
+  width: 0;            
+  opacity: 0;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 0px;
+
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--dark);
+  outline: none;
+
+  min-height: 100% !important;
+  padding: 0.4em;
+  transition: all 0.3s ease;
+}
+input[type="text"]::placeholder {
+  color: var(--dark-60); 
+}
+
+/* dropdowns */
+tacea-dropdown {
+  min-width: 10em;
+  position: relative;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+tacea-dropdown .trigger {
+  padding: 0.2em 0.8em;
+  padding-right: 0.4em;
+  border: 2px solid var(--dark);
+  border-radius: 5px;
+
+  color: var(--dark);
+
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.dropdown-content {
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  z-index: 50;
+  background-color: var(--steel-40);
+  border: 2px solid var(--dark);
+  border-radius: 5px;
+  padding: 1em;
+  min-width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  opacity: 0;                   
+
+  transform: translateY(-5px); 
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+tacea-dropdown.open {
+  background-color: var(--steel-40);
+}
+tacea-dropdown.open .trigger {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: 0;
+}
+
+tacea-dropdown.open .dropdown-content {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: 0;
+  backdrop-filter: blur(15px);
+}
+tacea-dropdown.open .trigger svg {
+  transform: rotate(180deg);
+  transition: transform 0.2s ease;
+}
+tacea-dropdown:hover {
+  background-color: var(--dark-20);
+  & .dropdown-content {
+    background-color: var(--dark-20);
+  }
+}
+tacea-dropdown .trigger:active {
+  transform: scale(0.98);
+  background-color: var(--steel-40);
+}
+tacea-dropdown .filter-option {
+  color: var(--dark);
+  display: flex;
+  gap: 0.6em;
+  align-items: center;
+}
+
 /* cards */
 product-card {
   position: relative;
@@ -575,7 +688,7 @@ review-card .column span {
   font-size: 0.8em;
 }
 review-card .column .date {
-  color: var(--dark-opac);
+  color: var(--dark-60);
 }
 post-card {
   height: 12.5em;
@@ -654,7 +767,17 @@ post-card .views svg {
 post-card .views p {
   font-size: 0.8em;
 }
+.info-card {
+  margin: 0;
+  padding: 1em;
+  border-radius: 5px;
+  width: 100%;
+  background-color: var(--dark-20);
+  color: var(--dark);
+  display: none;
+}
 
+/* RESPONSIVE DESIGN */
 @media (max-width: 1280px) {
   post-card {
     height: 10em;
@@ -694,7 +817,7 @@ post-card .views p {
 }
 @media (max-width: 768px) {
   .header-logo {
-    width: 110px;
+    width: 90px;
   }
   h1 {
     font-size: 3em;
@@ -707,6 +830,10 @@ post-card .views p {
   }
   p {
     font-size: 13px;
+  }
+  button span,
+  .btn-primary, .btn-secondary {
+    font-size: 14px !important;
   }
   post-card .card-content .post-category {
     font-size: 12px;
@@ -760,7 +887,7 @@ post-card .views p {
   .section { 
     padding: 3em 2em;
   }
-  .btn-primary {
+  .btn-primary, .btn-secondary {
     font-size: 14px;
   }
   .category-btn {
@@ -793,7 +920,7 @@ post-card .views p {
 }
 @media (max-width: 512px) {
   .header-logo {
-    width: 90px;
+    width: 80px;
   }
   h1 {
     font-size: 2.5em;
@@ -803,6 +930,10 @@ post-card .views p {
   }
   h3 {
     font-size: 0.9em;
+  }
+  button span,
+  .btn-primary, .btn-secondary {
+    font-size: 14px !important;
   }
   .btn-search svg {
     width: 2.1em;
